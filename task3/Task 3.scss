@@ -1,0 +1,171 @@
+// Mixin for handling media queries
+@mixin breakpoint($minwidth, $maxwidth) {
+    @media screen and (min-width: $minwidth) and (max-width: $maxwidth) {
+        @content;
+    }
+}
+
+// Mixin for centering elements
+@mixin center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+// Variables for colors, heights, and breakpoints
+$new-header-footercolor: #8ccff7;
+$circle_rowhover: #444;
+$circle1: #4e89ae;
+$circle2: #43658b;
+$circle3: #ed6663;
+$circle4: #ffa372;
+$height1: 400px;
+$height2: 300px;
+$height3: 200px;
+$radius1: 70px;
+$radius2: 80px;
+$radius3: 90px;
+$radius4: 100px;
+$new-footer-height: 50px;
+$breakpoint1: 801px;
+$breakpoint2: 480px;
+
+// Styling for the header section
+#new-header {
+    background-color: $new-header-footercolor;
+    height: $height1;
+    @include center;
+
+    // Styling for the box within the header
+    #new-box {
+        height: $height1;
+        width: $height1;
+        @include center;
+        background-color: rgb(207, 207, 207);
+        color: rgb(142, 135, 135);
+    }
+
+    // Media query for new-size1
+    @include breakpoint($breakpoint1 + 1, 9999px) {
+        #new-size1 {
+            display: block;
+        }
+
+        #new-size2, #new-size3 {
+            display: none;
+        }
+    }
+
+    // Media query for new-size2
+    @include breakpoint($breakpoint2 + 1, $breakpoint1) {
+        #new-size1 {
+            display: none;
+        }
+
+        #new-size2 {
+            display: block;
+        }
+
+        #new-size3 {
+            display: none;
+        }
+    }
+
+    // Media query for new-size3
+    @include breakpoint(0, $breakpoint2) {
+        #new-size1, #new-size2 {
+            display: none;
+        }
+
+        #new-size3 {
+            display: block;
+        }
+    }
+}
+
+// Styling for the space section
+#space {
+    background-color: white;
+    width: 100%;
+    height: 40px;
+}
+
+// Styling for colored divs
+.lightblue, .darkblue, .red, .orange {
+    width: 100%;
+    height: 40px;
+}
+
+.lightblue {
+    background-color: $circle1;
+}
+
+.darkblue {
+    background-color: $circle2;
+}
+
+.red {
+    background-color: $circle3;
+}
+
+.orange {
+    background-color: $circle4;
+}
+
+// Styling for the circles container
+.circles {
+    border: 1px solid black;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    // Media query for circle arrangement
+    @include breakpoint(621px, 9999px) {
+        flex-direction: row;
+    }
+
+    @include breakpoint(0, 620px) {
+        flex-direction: column;
+    }
+}
+
+// Styling for the circle elements
+.smallest, .smaller, .medium, .large {
+    border-radius: 50%;
+}
+
+.smallest {
+    width: $radius1;
+    height: $radius1;
+    background-color: $circle1;
+}
+
+.smaller {
+    width: $radius2;
+    height: $radius2;
+    background-color: $circle2;
+}
+
+.medium {
+    width: $radius3;
+    height: $radius3;
+    background-color: $circle3;
+}
+
+.large {
+    width: $radius4;
+    height: $radius4;
+    background-color: $circle4;
+}
+
+// Hover styles for circles and colored divs
+.smallest:hover, .smaller:hover, .medium:hover, .large:hover, .lightblue:hover, .darkblue:hover, .red:hover, .orange:hover {
+    background-color: $circle_rowhover;
+}
+
+// Styling for the footer section
+footer {
+    background-color: $new-header-footercolor;
+    height: $new-footer-height;
+}

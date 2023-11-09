@@ -1,0 +1,190 @@
+body {
+    width: auto;
+    background-color: #ccc;
+}
+
+/* Style for the .nav container */
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgb(64, 64, 162);
+    padding: 10px;
+}
+
+/* Style for the h1 element within the nav */
+.nav h1 {
+    color: azure;
+    margin: 0; /* Remove default margin */
+}
+
+/* Style for the .search-container */
+.search-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Style for the .search-bar */
+.search-bar {
+    width: 175px;
+    padding: 5px;
+    border: 1px solid #ccc;
+}
+
+/* Style for the list items within the ul */
+ul {
+    list-style: none;
+    padding: 0; /*padding to remove horizontal space */
+    margin: 0;
+    display: flex;
+    align-items: center; /* Vertically center list items */
+}
+
+/* Apply styles to the list items (li) within an unordered list (ul) */
+ul li {
+    margin-right: 10px; /* margin on the right side for spacing between list items */
+}
+
+/* Apply styles to anchor tags (a) within list items (li) in an unordered list (ul) */
+ul li a {
+    color: aliceblue; /* Set the text color to aliceblue */
+    text-decoration: none; /* text decoration (e.g., underlines) from anchor links */
+}
+
+#avg {
+    margin-left: 5%;
+    margin-top: 20px;
+    width: 430px;
+}
+
+#avg img {
+    max-width: 100%;  /* Ensure the image fits within the div */
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 5px 13px;
+    margin-top: 1%;
+    margin-bottom: 2%;
+    cursor: pointer;
+    margin-left: auto;
+    margin-right: 0;
+}
+
+#avg h3, #avg p {
+    margin: 5px; /* Add some margin for spacing between text */
+}
+
+#aside-container {
+    margin-left: 34%; /* Adjust the margin-left for a smaller width */
+    margin-top: -36.5%;
+    width: 50%; /* Reduce the width of the aside-container */
+}
+
+#one, #two {
+    width: 100%; /* divs width of their container */
+}
+
+#one > div, #two > div {
+    margin: 10px; /* margin to separate divs */
+    padding: 10px; /* some padding for spacing */
+}
+
+#one img, #two img {
+    max-width: 50%; /* maximum width of the images to 50% */
+    height: auto; /* Maintain the aspect ratio */
+}
+
+#avg, #lone-gunmen, #predators, #millenium, #rage {
+    background-color: rgb(238, 247, 255);
+}
+
+#lone-gunmen, #predators {
+    margin-bottom: 10px;
+    height: auto; /*  height to auto for flexibility */
+}
+
+
+#one, #two {
+    margin-right: 0; /* margin between div one and div two */
+}
+
+#main-container div {
+    padding-bottom: 2px; /* Add 2px padding below each div in the main article container */
+}
+
+
+
+/* Media query for 1280px and wider screens */
+@media (min-width: 1280px) {
+    #aside-container {
+        display: flex;
+        width: 35%;
+    }
+
+    #one, #two {
+        width: 50%;
+    }
+}
+
+/* Media query for 800px to 1023px */
+@media (min-width: 800px) and (max-width: 1023px) {
+    #avg {
+        order: -1;
+    }
+
+    #aside-container {
+        display: block;
+        margin-top: 20px;
+    }
+
+    #one, #two {
+        width: 100%;
+    }
+}
+
+/* Media query for 1024px to 1280px */
+@media (min-width: 1024px) and (max-width: 1279px) {
+    #aside-container {
+        display: flex;
+        width: 35%;
+    }
+
+    #one, #two {
+        width: 50%;
+    }
+}
+
+/* Media query for 801px to 1024px (Adjust the range as needed) */
+@media (min-width: 801px) and (max-width: 1024px) {
+    #avg, #aside-container {
+        display: block;
+        margin: 0 auto;
+    }
+
+    #one, #two {
+        width: 100%;
+    }
+}
+
+/* Media query for 480px and below */
+@media (max-width: 480px) {
+    #main-container, #avg, #aside-container {
+        display: block;
+        margin: 0 auto;
+    }
+
+    #nav {
+        display: block;
+        text-align: right;
+        margin-right: 10px;
+    }
+
+    nav, .search-bar {
+        display: none;
+    }
+}
+
